@@ -25,9 +25,14 @@ class UsersController extends Controller
         $user = UsersReg::where('email', $request->email)->first();
         $isChecked = Hash::check($request->password, $user->password);
         // return ["user"=>$user, "userpassword"=>$user->password, "isChecked"=>$isChecked];
+         $token = $user->createToken('kickstore')->plainTextToken;
 
 if ($user && $isChecked) {
-    return ["isSuccessful"=>true];
+    return response()->json([
+    'isSuccessful' => true,
+    'token'   => $token,
+    'user'    => $user
+]);
 } else {
     return ["isSuccessful"=>false];
 }

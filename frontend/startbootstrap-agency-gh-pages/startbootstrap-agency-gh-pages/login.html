@@ -187,6 +187,8 @@ document.getElementById('btnLogin').addEventListener('click',async (e)=>{
     // e.preventDefault();
     let result = await sendFun(e);   // wait for async to finish
     if (result["isSuccessful"]) {
+        localStorage.setItem("authToken", result.token);
+
         window.location.href = "./index.html";
     } else {
         alert("Error Wrong Credentials");
