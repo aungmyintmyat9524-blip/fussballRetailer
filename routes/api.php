@@ -23,6 +23,6 @@ Route::get('/myacc', function (Request $request) {
 
 
 
-Route::get('/index', function (Request $request) {
+Route::get('/register', function (Request $request) {
     return "hello";
 });
