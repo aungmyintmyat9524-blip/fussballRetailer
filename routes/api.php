@@ -30,4 +30,6 @@ Route::get('/myacc', function (Request $request) {
 
 
 
-    Route::post('/register', [UsersController::class, 'register']);
+Route::post('/register', [UsersController::class, 'register']);
+
+Route::post('/login', [UsersController::class, 'login']);
