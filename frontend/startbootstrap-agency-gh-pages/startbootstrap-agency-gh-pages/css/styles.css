@@ -142,7 +142,7 @@ body{
 
 .login-card h2{
 
-    color:#fff;
+    color:#d10b0b;
 
     font-size:36px;
 
@@ -194,7 +194,7 @@ body{
 
     background:rgba(255,255,255,.15);
 
-    color:#fff;
+    color:#d10b0b;
 
     font-size:15px;
 
@@ -216,7 +216,7 @@ body{
 
     transform:translateY(-50%);
 
-    color:#fff;
+    color:#d10b0b;
 
     cursor:pointer;
 
@@ -236,7 +236,7 @@ body{
 
     font-size:14px;
 
-    color:#fff;
+    color:#d10b0b;
 
 }
 
@@ -268,7 +268,7 @@ body{
 
     background:#1ed760;
 
-    color:#fff;
+    color:#d10b0b;
 
     font-size:17px;
 
@@ -346,7 +346,7 @@ body{
 
     border-radius:12px;
 
-    background:#fff;
+    background:#d10b0b;
 
     color:#333;
 

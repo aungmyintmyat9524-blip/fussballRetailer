@@ -118,7 +118,7 @@ Register to start shopping with us.
 
 <input 
 type="text"
-placeholder="First Name"
+placeholder="First Name" id="fname"
 required>
 
 </div>
@@ -131,7 +131,7 @@ required>
 
 <input 
 type="text"
-placeholder="Last Name"
+placeholder="Last Name" id="lname"
 required>
 
 </div>
@@ -150,6 +150,7 @@ required>
 <input 
 type="email"
 placeholder="Email Address"
+id="email"
 required>
 
 </div>
@@ -165,6 +166,7 @@ required>
 <input 
 type="text"
 placeholder="Phone Number"
+id="ph"
 required>
 
 </div>
@@ -230,7 +232,7 @@ I agree with Terms & Conditions
 
 
 
-<button class="register-btn">
+<button class="register-btn" id="btnReg">
 
 Create Account
 
@@ -313,7 +315,44 @@ showPassword.innerHTML=
 
 
 }
+async function sendSubmit(event) {
+    event.preventDefault(); // ✅ stop form reload
 
+    let fname = document.getElementById('fname').value;
+    let lname = document.getElementById('lname').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('ph').value;
+    let password = document.getElementById('password').value;
+
+    let payload = {
+        firstname: fname,
+        lastname: lname,
+        email: email,
+        phone: phone,
+        password: password
+    };
+
+    try {
+        let response = await fetch('http://localhost:8000/api/register', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        let data = await response.json(); // ✅ read response
+        console.log("Server response:", data);
+
+        alert("Created User: " + JSON.stringify(data));
+    } catch (err) {
+        console.error("Error submitting:", err);
+        alert("Failed to create user");
+    }
+}
+
+// ✅ attach to form submit, not button click
+document.querySelector("form").addEventListener("submit", sendSubmit);
 
 </script>
 
