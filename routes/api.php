@@ -10,6 +10,19 @@ Route::get('/user', function (Request $request) {
 
 
 
-Route::get('/test', function (Request $request) {
+Route::get('/index', function (Request $request) {
+    return "hello";
+});
+
+
+
+
+Route::get('/myacc', function (Request $request) {
+    return "hello";
+});
+
+
+
+Route::get('/index', function (Request $request) {
     return "hello";
 });
