@@ -55,6 +55,7 @@ async function loadProducts() {
         <img src="${p.image_url}" alt="${p.name}">
         <h3><a href="productDetail.html?id=${p.id}">${p.name}</a></h3>
         <p>$${p.price}</p>
+        <button>Add To Cart</button>
       </div>`;
   });
 }
