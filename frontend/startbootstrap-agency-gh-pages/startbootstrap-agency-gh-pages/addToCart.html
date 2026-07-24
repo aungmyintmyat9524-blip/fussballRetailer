@@ -49,7 +49,7 @@
   </table>
   <div class="checkout">
     <h3 id="total">Total: $0</h3>
-    <button class="checkout-btn">Proceed to Checkout</button>
+    <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
   </div>
 </section>
 
@@ -95,16 +95,26 @@ function removeItem(id) {
   loadCart(); // reload cart after removal
 }
 
-document.getElementById('checkout-btn').addEventListener('click', () => {
-  
-  localStorage.removeItem("cart"); // Clear the cart after checkout
-  alert('Proceeding to checkout...');
-  window.location.href = "./index.html"; // Redirect to a checkout page (you can create this page)
-  // Here you can redirect to a checkout page or handle the checkout process
+// document.getElementById('checkout-btn').addEventListener('click', () => {
+  // localStorage.removeItem("cart"); // Clear the cart after checkout
+//   alert('Proceeding to checkout...');
+  // window.location.href = "./index.html"; // Redirect to a checkout page (you can create this page)
+//   // Here you can redirect to a checkout page or handle the checkout process
 
-});
+// });
 
 loadCart();
+
+
+document.getElementById("checkoutBtn").addEventListener("click", () => {
+  // Example: clear cart and redirect
+  localStorage.removeItem("cart"); // clear cart after checkout
+  alert("Proceeding to checkout...");
+
+  // Redirect to a checkout page (create checkout.html if you want a form)
+  window.location.href = "./index.html";
+});
+
 </script>
 </body>
 </html>
