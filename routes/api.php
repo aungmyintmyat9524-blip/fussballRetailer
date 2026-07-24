@@ -44,3 +44,6 @@ Route::post('/products', [UsersController::class, 'store']);
 Route::get('/products', [UsersController::class, 'index']);
 
 
+Route::post('/cart', [UsersController::class, 'cart']);
+
+
