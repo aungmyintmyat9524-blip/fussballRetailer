@@ -66,4 +66,29 @@ if ($user && $isChecked) {
     ]);
 }
 
+
+ function index (Request $request) {
+    return response()->json([
+        [
+            'id' => 1,
+            'name' => 'Nike Mercurial Boots',
+            'price' => 120,
+            'image_url' => asset('images/boot.jpg')
+        ],
+        [
+            'id' => 2,
+            'name' => 'Argentina Jersey',
+            'price' => 50,
+            'image_url' => asset('images/jersey.jpg')
+        ],
+        [
+            'id' => 3,
+            'name' => 'Match Football',
+            'price' => 60,
+            'image_url' => asset('images/ball.jpg')
+        ]]);
+        
+        }
+
+
 }
