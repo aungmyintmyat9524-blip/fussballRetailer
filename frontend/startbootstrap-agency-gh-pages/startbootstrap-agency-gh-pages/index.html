@@ -1,638 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S&L Football Store</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<title>S&L Football Store</title>
-
-
-<link rel="stylesheet" href="css/styles.css">
-
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin:0; background:#f8f9fa; }
+    header { background:#111; color:#fff; padding:15px 40px; display:flex; justify-content:space-between; align-items:center; }
+    .logo { display:flex; align-items:center; }
+    .logo i { margin-right:10px; color:#00bfff; }
+    nav ul { list-style:none; display:flex; margin:0; padding:0; }
+    nav ul li { margin-left:20px; }
+    nav ul li a { color:#fff; text-decoration:none; font-weight:500; }
+    nav ul li a:hover { color:#00bfff; }
+    .nav-icons { display:flex; align-items:center; }
+    .nav-icons i { margin-left:20px; cursor:pointer; }
+    .hero { background:#222 url('images/hero-banner.jpg') center/cover no-repeat; height:70vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#fff; }
+    .hero h1 { font-size:48px; font-weight:700; margin-bottom:10px; }
+    .hero p { font-size:18px; margin-bottom:20px; }
+    .hero a { background:#00bfff; color:#fff; padding:12px 30px; border-radius:5px; text-decoration:none; font-weight:600; }
+    .hero a:hover { background:#0099cc; }
+    section { padding:60px 40px; text-align:center; }
+    .categories .grid { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
+    .categories .item { background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); width:180px; }
+    .categories .item i { font-size:32px; color:#00bfff; margin-bottom:10px; }
+    footer { background:#111; color:#fff; text-align:center; padding:15px; }
+  </style>
 </head>
-
-
 <body>
 
-
-<!-- NAVBAR -->
-
 <header>
-
-<nav>
-
-
-<div class="logo">
-
-<i class="fa-solid fa-futbol"></i>
-
-<h2>S&L</h2>
-
-</div>
-
-
-
-<ul id="menu">
-
-<li><a href="#">Home</a></li>
-
-<li><a href="#products">Products</a></li>
-
-<li><a href="#collection">Collection</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-
-
-<div class="nav-icons">
-
-<div class="search">
-
-<input id="searchBox" type="text" placeholder="Search products...">
-
-<i class="fa-solid fa-magnifying-glass"></i>
-
-</div>
-
-
-<i class="fa-solid fa-heart"></i>
-
-
-<div class="cart">
-
-<i class="fa-solid fa-cart-shopping"></i>
-
-<span id="cartCount">0</span>
-
-</div>
-
-
-<a href="login.html">
-
-<i class="fa-solid fa-user"></i>
-
-</a>
-
-
-</div>
-
-
-
-<div class="hamburger" onclick="menuToggle()">
-
-<i class="fa-solid fa-bars"></i>
-
-</div>
-
-
-
-</nav>
-
+  <div class="logo">
+    <i class="fa-solid fa-futbol"></i>
+    <h2>S&L</h2>
+  </div>
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="addToCart.html">Cart</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+  <!-- <div class="nav-icons">
+    <i class="fa-solid fa-heart"></i>
+    <a href="addToCart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+  </div> -->
 </header>
 
-
-
-
-
-<!-- HERO -->
-
-
 <section class="hero">
-
-
-<div class="hero-content">
-
-
-<h1>
-
-DOMINATE
-
-<br>
-
-THE
-
-<span>
-
-GAME
-
-</span>
-
-</h1>
-
-
-<p>
-
-Premium football boots, jerseys and accessories
-for professional players.
-
-</p>
-
-
-
-<button>
-
-Shop Now
-
-</button>
-
-
-
-</div>
-
-
+  <h1>Dominate the Game</h1>
+  <p>Premium football boots, jerseys and accessories for professionals.</p>
+  <a href="#products">Shop Now</a>
 </section>
 
-
-
-
-
-
-
-<!-- CATEGORY -->
-
-
-<section class="categories">
-
-
-<h2>Shop Categories</h2>
-
-
-<div class="category-grid">
-
-
-<div class="category">
-
-<i class="fa-solid fa-shoe-prints"></i>
-
-<h3>Football Boots</h3>
-
-</div>
-
-
-<div class="category">
-
-<i class="fa-solid fa-shirt"></i>
-
-<h3>Jerseys</h3>
-
-</div>
-
-
-
-<div class="category">
-
-<i class="fa-solid fa-futbol"></i>
-
-<h3>Football</h3>
-
-</div>
-
-
-
-<div class="category">
-
-<i class="fa-solid fa-person-running"></i>
-
-<h3>Training Gear</h3>
-
-</div>
-
-
-</div>
-
-
+<section id="categories" class="categories">
+  <h2>Shop Categories</h2>
+  <div class="grid">
+    <div class="item"><i class="fa-solid fa-shoe-prints"></i><h3>Football Boots</h3></div>
+    <div class="item"><i class="fa-solid fa-shirt"></i><h3>Jerseys</h3></div>
+    <div class="item"><i class="fa-solid fa-futbol"></i><h3>Footballs</h3></div>
+    <div class="item"><i class="fa-solid fa-person-running"></i><h3>Training Gear</h3></div>
+  </div>
 </section>
 
-
-
-
-
-
-
-
-<!-- PRODUCTS -->
-
-
-<section id="products" class="products">
-
-
-<div class="title">
-
-<h2>Featured Products</h2>
-
-
-<div class="filter">
-
-<button onclick="filterProduct('all')">
-All
-</button>
-
-
-<button onclick="filterProduct('boots')">
-Boots
-</button>
-
-
-<button onclick="filterProduct('jersey')">
-Jersey
-</button>
-
-
-<button onclick="filterProduct('ball')">
-Ball
-</button>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="product-grid" id="productList">
-
-
-
-<div class="product-card boots">
-
-
-<span class="discount">
--20%
-</span>
-
-
-<i class="fa-regular fa-heart wish"></i>
-
-
-<img src="images/boot.jpg">
-
-
-<h3>Nike Mercurial Boots</h3>
-
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-
-<p>$120</p>
-
-
-<button onclick="addCart()">
-
-Add To Cart
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div class="product-card jersey">
-
-
-<span class="discount">
-NEW
-</span>
-
-
-<i class="fa-regular fa-heart wish"></i>
-
-
-<img src="images/jersey.jpg">
-
-
-<h3>Argentina Jersey</h3>
-
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-
-<p>$50</p>
-
-
-<button onclick="addCart()">
-
-Add To Cart
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="product-card ball">
-
-
-<i class="fa-regular fa-heart wish"></i>
-
-
-<img src="images/ball.jpg">
-
-
-<h3>Match Football</h3>
-
-
-<div class="rating">
-
-★★★★☆
-
-</div>
-
-
-<p>$60</p>
-
-
-<button onclick="addCart()">
-
-Add To Cart
-
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="product-card boots">
-
-
-<i class="fa-regular fa-heart wish"></i>
-
-
-<img src="images/glove.jpg">
-
-
-<h3>Goalkeeper Gloves</h3>
-
-
-<div class="rating">
-
-★★★★★
-
-</div>
-
-
-<p>$35</p>
-
-
-<button onclick="addCart()">
-
-Add To Cart
-
-</button>
-
-
-</div>
-
-
-
-
-
-</div>
-
-
+<section id="products">
+  <h2>Featured Products</h2>
+  <!-- You can later inject product cards here with JS -->
 </section>
 
-
-
-
-
-
-
-
-
-<!-- PROMOTION -->
-
-
-<section class="promotion">
-
-
-<div>
-
-<h1>
-
-30% OFF
-
-</h1>
-
-
-<h2>
-
-Summer Football Collection
-
-</h2>
-
-
-<p>
-
-Upgrade your football equipment today.
-
-</p>
-
-
-<button>
-
-Shop Collection
-
-</button>
-
-
-</div>
-
-
-
-<img src="images/player.png">
-
-
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name"><br><br>
+    <input type="email" placeholder="Email"><br><br>
+    <textarea placeholder="Message"></textarea><br><br>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
-
-
-
-
-
-
-
-
-<!-- WHY US -->
-
-
-<section class="why">
-
-
-<h2>
-Why Choose S&L?
-</h2>
-
-
-
-<div class="why-grid">
-
-
-<div>
-
-<i class="fa-solid fa-truck-fast"></i>
-
-<h3>
-Fast Delivery
-</h3>
-
-<p>
-Quick worldwide shipping
-</p>
-
-</div>
-
-
-
-
-<div>
-
-<i class="fa-solid fa-shield-halved"></i>
-
-<h3>
-Original Products
-</h3>
-
-<p>
-100% authentic products
-</p>
-
-</div>
-
-
-
-
-
-<div>
-
-<i class="fa-solid fa-headset"></i>
-
-<h3>
-24/7 Support
-</h3>
-
-<p>
-Customer assistance
-</p>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- CONTACT -->
-
-
-<section id="contact" class="contact">
-
-
-<h2>Contact Us</h2>
-
-
-<input placeholder="Your Name">
-
-
-<input placeholder="Email">
-
-
-<textarea placeholder="Message"></textarea>
-
-
-<button>
-Send Message
-</button>
-
-
-</section>
-
-
-
-
-
-
-
 
 <footer>
-
-
-<h2>
-
-⚽ S&L Football Store
-
-</h2>
-
-
-<p>
-
-© 2026 All Rights Reserved
-
-</p>
-
-
-<div>
-
-<i class="fa-brands fa-facebook"></i>
-
-<i class="fa-brands fa-instagram"></i>
-
-<i class="fa-brands fa-tiktok"></i>
-
-
-</div>
-
-
+  <p>&copy; 2026 S&L Football Store. All rights reserved.</p>
 </footer>
 
+<script>
+  // Example JS: toggle mobile menu
+  function menuToggle() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('open');
+  }
 
 
+  async function loadProduct() {
+  const response = await fetch("http://localhost:8000/api/index");
+  const product = await response.json();
 
-<script src="js/script.js"></script>
+  document.getElementById("products").innerHTML = `
+    <div class="product-card">
+      <img src="${product.image_url}" alt="${product.name}" style="width:200px; border-radius:8px;">
+      <h3>${product.name}</h3>
+      <p>$${product.price}</p>
+    </div>
+  `;
+}
 
+loadProduct();
+</script>
 
 </body>
-
 </html>

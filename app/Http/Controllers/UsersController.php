@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\UsersReg;
+use App\Models\Products;
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
@@ -37,5 +38,32 @@ if ($user && $isChecked) {
     return ["isSuccessful"=>false];
 }
     }
+
+
+    public function store(Request $request)
+{
+    $request->validate([
+        'name'  => 'required|string|max:255',
+        'price' => 'required|numeric',
+        'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+    ]);
+
+    $imagePath = null;
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('products', 'public');
+    }
+
+    $product = Products::create([
+        'name'  => $request->name,
+        'price' => $request->price,
+        'image' => $imagePath
+    ]);
+
+    return response()->json([
+        'isSuccessful' => true,
+        'product' => $product,
+        'image_url' => $imagePath ? asset('storage/'.$imagePath) : null
+    ]);
+}
 
 }
