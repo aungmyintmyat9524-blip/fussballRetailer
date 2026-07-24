@@ -54,6 +54,7 @@
 
                 <input
                     type="email"
+                    id="email"
                     placeholder="Email Address"
                     required>
             </div>
@@ -90,7 +91,7 @@
 
             </div>
 
-            <button class="login-btn">
+            <button class="login-btn" id="btnLogin">
                 Login
             </button>
 
@@ -98,13 +99,13 @@
                 <span>OR</span>
             </div>
 
-            <button type="button" class="google-btn">
+            <!-- <button type="button" class="google-btn">
 
                 <i class="fa-brands fa-google"></i>
 
                 Continue with Google
 
-            </button>
+            </button> -->
 
             <p class="signup">
 
@@ -145,8 +146,54 @@ password.type="password";
 toggle.innerHTML='<i class="fa-solid fa-eye"></i>';
 
 }
-
 }
+
+
+let sendFun = async(event)=>{
+     
+    let email = document.getElementById('email').value;
+    let pass = document.getElementById("password").value;
+    event.preventDefault(); // ✅ stop form reload
+
+    let payload = {
+        email: email,
+
+        password: pass,
+    };
+
+    try {
+        let response = await fetch('http://localhost:8000/api/login', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        let data = await response.json(); // ✅ read response
+        console.log("Server response:", data);
+
+        alert("Created User: " + JSON.stringify(data));
+        return data;
+    } catch (err) {
+        console.error("Error submitting:", err);
+        alert("Failed to create user");
+    }
+}
+
+
+document.getElementById('btnLogin').addEventListener('click',async (e)=>{
+    e.preventDefault();
+    // e.preventDefault();
+    let result = await sendFun(e);   // wait for async to finish
+    if (result["isSuccessful"]) {
+        localStorage.setItem("authToken", result.token);
+
+        window.location.href = "./index.html";
+    } else {
+        alert("Error Wrong Credentials");
+    }
+})
 
 </script>
 
